@@ -1,0 +1,13 @@
+[book]
+authors = ["blackstart-labs"]
+language = "en"
+multilingual = false
+src = "docs/src"
+title = "Aliaskit Documentation"
+
+[output.html]
+git-repository-url = "https://github.com/blackstart-labs/aliaskit"
+site-url = "/aliaskit/"
+
+[preprocessor.template]
+command = "mdbook-template"

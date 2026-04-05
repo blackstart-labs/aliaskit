@@ -1,0 +1,26 @@
+core:
+  - changed-files:
+    - any-glob-to-any-file: 'core/**'
+
+modules:
+  - changed-files:
+    - any-glob-to-any-file: 'modules/**'
+
+docs:
+  - changed-files:
+    - any-glob-to-any-file: '**/*.md'
+    - any-glob-to-any-file: 'docs/**'
+
+ci:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**'
+
+config:
+  - changed-files:
+    - any-glob-to-any-file: 'config/**'
+
+installer:
+  - changed-files:
+    - any-glob-to-any-file: 'install.sh'
+    - any-glob-to-any-file: 'uninstall.sh'
+    - any-glob-to-any-file: 'update.sh'

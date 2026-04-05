@@ -3,6 +3,8 @@
 [![CI/CD Pipeline](https://github.com/blackstart-labs/aliaskit/actions/workflows/lint.yml/badge.svg)](https://github.com/blackstart-labs/aliaskit/actions/workflows/lint.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/blackstart-labs/aliaskit/wiki)
 
+> **📚 Read the Full Documentation Website: [blackstart-labs.github.io/aliaskit/docs/MANUAL](https://blackstart-labs.github.io/aliaskit/docs/MANUAL)**
+
 A comprehensive, modular open-source Bash alias toolkit designed for all Linux environments. Whether you are a developer, operations engineer, or casual Linux user, Aliaskit supercharges your terminal with a beautiful UI.
 
 ## Features
@@ -13,10 +15,29 @@ A comprehensive, modular open-source Bash alias toolkit designed for all Linux e
 
 ## Installation
 
-Run this one-liner to install:
+## Install
+
+**Linux / macOS / WSL (Windows):**
 ```bash
 curl -sL https://raw.githubusercontent.com/blackstart-labs/aliaskit/main/install.sh | bash
 ```
+
+The installer auto-detects your OS and injects into the correct shell profile:
+
+| Platform | Shell Profile | APT Hook |
+| :--- | :--- | :--- |
+| Ubuntu / Debian | `~/.bashrc` | ✅ Optional |
+| Arch / Fedora / Other Linux | `~/.bashrc` | ❌ Skipped |
+| macOS (Zsh) | `~/.zprofile` | ❌ N/A |
+| WSL / Git Bash | `~/.bashrc` | ✅ Optional |
+To remove all scripts, configs, and APT background hooks:
+```bash
+bash ~/.aliaskit/uninstall.sh
+```
+
+## Contributing
+Please see the [Comprehensive Manual](https://blackstart-labs.github.io/aliaskit/docs/MANUAL) for detailed instructions on adding new `# @desc` modules and utilizing the `shellcheck` CI pipeline!
+
 Once installed, reload your terminal or run `source ~/.bashrc`.
 
 ## Usage

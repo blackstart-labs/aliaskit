@@ -6,6 +6,22 @@ AK_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 export AK_ROOT
 export AK_CONFIG="${HOME}/.aliaskit.conf"
 
+# Detect OS and export for conditional use in modules
+_os_type="$(uname -s)"
+case "$_os_type" in
+    Linux*)
+        if grep -qiE 'microsoft|wsl' /proc/version 2>/dev/null; then
+            export AK_OS="wsl"
+        else
+            export AK_OS="linux"
+        fi
+        ;;
+    Darwin*)              export AK_OS="macos" ;;
+    MINGW*|CYGWIN*|MSYS*) export AK_OS="windows" ;;
+    *)                    export AK_OS="unknown" ;;
+esac
+unset _os_type
+
 # Copy default config if it doesn't exist
 if [[ ! -f "$AK_CONFIG" ]]; then
     # In case installation hasn't fully copied it yet, try local layout
