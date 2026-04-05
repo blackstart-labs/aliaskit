@@ -40,13 +40,21 @@ pubkey
 ```
 
 ### `copypub`
-- **Description:** Copy your SSH public key directly to the clipboard (requires `xclip`)
+- **Description:** Copy your SSH public key directly to the clipboard (cross-platform)
 - **Usage:** `copypub`
 - **Example:** `copypub`
 
+Aliaskit automatically picks the right clipboard tool for your OS:
+
+| Platform | Tool Used |
+| :--- | :--- |
+| macOS | `pbcopy` |
+| WSL (Windows) | `clip.exe` |
+| Linux | `xclip` → fallback: `xsel` |
+
 ```bash
 copypub
-# Public key copied to clipboard!
+# ✔ Public key copied to clipboard!
 # Paste it into GitHub → Settings → SSH Keys
 ```
 

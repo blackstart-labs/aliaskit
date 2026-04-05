@@ -2,6 +2,8 @@
 
 Streamlined APT commands for installing, upgrading, and cleaning your Debian/Ubuntu system.
 
+> **⚠️ Platform Note:** This module is only active on **Debian/Ubuntu-based** Linux distributions that use the `apt` package manager. On macOS and Arch/Fedora Linux, these aliases are safely skipped. Use your native package manager (`brew`, `pacman`, `dnf`) instead.
+
 ---
 
 ## Aliases

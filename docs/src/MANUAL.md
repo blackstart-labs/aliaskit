@@ -9,13 +9,26 @@ title: Aliaskit Documentation
 
 ## Quick Install
 
+**Linux / macOS / WSL (Windows):**
 ```bash
 curl -sL https://raw.githubusercontent.com/blackstart-labs/aliaskit/main/install.sh | bash
 ```
 
+The installer auto-detects your OS and shell profile automatically:
+
+| Platform | Shell Profile Injected | APT Auto-Hook |
+| :--- | :--- | :--- |
+| Ubuntu / Debian | `~/.bashrc` | ✅ Optional |
+| Arch / Fedora / Other Linux | `~/.bashrc` | ❌ Skipped |
+| macOS (Zsh, default since Catalina) | `~/.zprofile` | ❌ N/A |
+| WSL / Git Bash (Windows) | `~/.bashrc` | ✅ Optional |
+
+> **💡 Tip:** On macOS, aliaskit uses `pbcopy` for clipboard commands. On WSL it uses `clip.exe`. On Linux it uses `xclip` or `xsel`.
+
 Then reload your terminal:
 ```bash
-source ~/.bashrc
+source ~/.bashrc   # Linux / WSL
+source ~/.zprofile # macOS
 ```
 
 ## Core Commands
