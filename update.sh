@@ -15,8 +15,10 @@ check_and_update() {
     # We will do a quick check against remote
     git fetch origin main &>/dev/null || git fetch origin master &>/dev/null
     
-    local LOCAL=$(git rev-parse HEAD 2>/dev/null)
-    local REMOTE=$(git rev-parse @{u} 2>/dev/null)
+    local LOCAL
+    LOCAL=$(git rev-parse HEAD 2>/dev/null)
+    local REMOTE
+    REMOTE=$(git rev-parse "@{u}" 2>/dev/null)
     
     if [[ -z "$LOCAL" || -z "$REMOTE" ]]; then
         [[ $AUTO_MODE -eq 0 ]] && echo "Cannot check for updates. Are you in a git repository with an upstream set?"
